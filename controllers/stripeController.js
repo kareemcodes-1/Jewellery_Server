@@ -51,6 +51,7 @@ const createStripeSession = expressAsyncHandler(async (req, res) => {
         res.status(200).json({ id: session.id, customer });
         return; // Prevent further code execution
     } catch (error) {
+        console.log(error);
         res.status(500).json({ message: error.message });
         return; // Prevent further code execution
     }
